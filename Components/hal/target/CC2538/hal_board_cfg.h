@@ -445,16 +445,19 @@ extern void MAC_RfFrontendSetup(void);
 #endif
 
 /* Set to TRUE enable LED usage, FALSE disable it */
+// Addec by Yang
 #ifndef HAL_LED
-#define HAL_LED TRUE
+#define HAL_LED FALSE
 #endif
+
 #if (!defined BLINK_LEDS) && (HAL_LED == TRUE)
 #define BLINK_LEDS
 #endif
 
 /* Set to TRUE enable KEY usage, FALSE disable it */
+// added by Yang
 #ifndef HAL_KEY
-#define HAL_KEY TRUE
+#define HAL_KEY FALSE
 #endif
 
 /* Set to TRUE enable UART usage, FALSE disable it */

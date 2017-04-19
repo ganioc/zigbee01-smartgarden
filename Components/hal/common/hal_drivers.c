@@ -147,7 +147,7 @@ void HalDriverInit (void)
 
   /* KEY */
 #if (defined HAL_KEY) && (HAL_KEY == TRUE)
-  HalKeyInit();
+  //HalKeyInit();
 #endif
   
   /* SPI */
