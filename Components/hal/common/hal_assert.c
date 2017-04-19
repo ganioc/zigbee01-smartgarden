@@ -128,10 +128,11 @@ void halAssertHazardLights(void)
    */
   HAL_BOARD_INIT();
 
-  HAL_TURN_OFF_LED1();
-  HAL_TURN_OFF_LED2();
-  HAL_TURN_OFF_LED3();
-  HAL_TURN_OFF_LED4();
+  // Added by Yang
+  //HAL_TURN_OFF_LED1();
+  //HAL_TURN_OFF_LED2();
+  //HAL_TURN_OFF_LED3();
+  //HAL_TURN_OFF_LED4();
 
   /*-------------------------------------------------------------------------------
    *  Master infinite loop.
@@ -145,7 +146,7 @@ void halAssertHazardLights(void)
      */
     do
     {
-      HAL_LED_BLINK_DELAY();
+      //HAL_LED_BLINK_DELAY();
 
       /* toggle LEDS, the #ifdefs are in case HAL has logically remapped non-existent LEDs */
 #if (HAL_NUM_LEDS >= 1)

@@ -22,7 +22,7 @@
   its documentation for any purpose.
 
   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
-  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+  PROVIDED ï¿½AS ISï¿½ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
@@ -72,6 +72,10 @@
 #if (defined HAL_SPI) && (HAL_SPI == TRUE)
 #include "hal_spi.h"
 #endif
+
+#include "cust_func.h"
+
+
 
 /**************************************************************************************************
  *                                      GLOBAL VARIABLES
@@ -219,9 +223,15 @@ uint16 Hal_ProcessEvent( uint8 task_id, uint16 events )
 
   if (events & HAL_KEY_EVENT)
   {
+
+   
 #if (defined HAL_KEY) && (HAL_KEY == TRUE)
     /* Check for keys */
+    // added by yang 
+    cust_HalKeyPoll();
     HalKeyPoll();
+    cust_wdt_toggle();
+
 
     /* if interrupt disabled, do next polling */
     if (!Hal_KeyIntEnable)
