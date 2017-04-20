@@ -447,7 +447,7 @@ extern void MAC_RfFrontendSetup(void);
 /* Set to TRUE enable LED usage, FALSE disable it */
 // Addec by Yang
 #ifndef HAL_LED
-#define HAL_LED FALSE
+#define HAL_LED TRUE
 #endif
 
 #if (!defined BLINK_LEDS) && (HAL_LED == TRUE)
