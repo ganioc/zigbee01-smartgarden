@@ -918,7 +918,7 @@ static void zclSampleLight_ProcessIdentifyTimeChange( void )
     //debug_str("zclSampleLight_IdentifyTime");
     osal_start_timerEx( zclSampleLight_TaskID, SAMPLELIGHT_IDENTIFY_TIMEOUT_EVT, 1000 );
     //Added by Yang
-    HalLedBlink ( HAL_LED_4, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
+    //HalLedBlink ( HAL_LED_4, 0xFF, HAL_LED_DEFAULT_DUTY_CYCLE, HAL_LED_DEFAULT_FLASH_TIME );
   }
   else
   {

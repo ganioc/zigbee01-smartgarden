@@ -117,6 +117,8 @@ void InitBoard( uint8 level )
   {
     // Interrupts off
     osal_int_disable( INTS_ALL );
+
+    //Added by Yang
     HalKeyConfig( FALSE, NULL); //Config GPIO as input
 #if (defined OTA_CLIENT) && (OTA_CLIENT == TRUE)
     HalOTAInit();
